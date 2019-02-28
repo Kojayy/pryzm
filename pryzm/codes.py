@@ -1,31 +1,30 @@
-cap27 = '\033[27m'
 text_attributes = {
-    'at_off':       0,
-    'at_bold':      1,
-    'at_dim':       2,
-    'at_italic':    3,
-    'at_under':     4,
-    'at_blink':     5,
-    'at_reverse':   6,
-    'at_hide':      8,
+    '_off':       0,
+    '_bold':      1,
+    '_dim':       2,
+    '_italic':    3,
+    '_under':     4,
+    '_blink':     5,
+    '_reverse':   6,
+    '_hide':      8,
 
-    'fg_black':     30,
-    'fg_red':       31,
-    'fg_green':     32,
-    'fg_yellow':    33,
-    'fg_blue':      34,
-    'fg_magenta':   35,
-    'fg_cyan':      36,
-    'fg_white':     37,
+    'black':     30,
+    'red':       31,
+    'green':     32,
+    'yellow':    33,
+    'blue':      34,
+    'magenta':   35,
+    'cyan':      36,
+    'white':     37,
 
-    'bg_black':     40,
-    'bg_red':       41,
-    'bg_green':     42,
-    'bg_yellow':    43,
-    'bg_blue':      44,
-    'bg_magenta':   45,
-    'bg_cyan':      46,
-    'bg_white':     47,
+    'BLACK':     40,
+    'RED':       41,
+    'GREEN':     42,
+    'YELLOW':    43,
+    'BLUE':      44,
+    'MAGENTA':   45,
+    'CYAN':      46,
+    'WHITE':     47,
 }
 
 clear = {
@@ -35,7 +34,7 @@ clear = {
     'clear_line': '2K',
     'clear_line_to_end': '0K',
     'clear_line_to_start': '1K',
-    }
+}
 
 cursor = {
     'move_up': 'A',
@@ -45,5 +44,4 @@ cursor = {
     'move_next_line': 'E',
     'move_prev_line': 'F',
     'move_column': 'G'
-    }
-
+}
