@@ -1,4 +1,3 @@
-cap27 = '\033[27m'
 text_attributes = {
     '_off':       0,
     '_bold':      1,
@@ -35,7 +34,7 @@ clear = {
     'clear_line': '2K',
     'clear_line_to_end': '0K',
     'clear_line_to_start': '1K',
-    }
+}
 
 cursor = {
     'move_up': 'A',
@@ -45,5 +44,4 @@ cursor = {
     'move_next_line': 'E',
     'move_prev_line': 'F',
     'move_column': 'G'
-    }
-
+}
