@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="pryzm",
-    version="0.0.5",
+    version="0.0.7",
     author="Efrain Olivares",
     author_email="efrain.olivares@gmail.com",
     description="Basic support for asci color text on linux terminals",
