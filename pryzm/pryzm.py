@@ -1,14 +1,24 @@
 
-from pryzm import text_attributes
+from pryzm import text_attribute
 
 class Pryzm(object):
-    """pz = pryzm.Pryzm(); warn = pz._italic().yellow().red; warn("Achtung!")
-        ASCII FORMAT:
-            ESC[AT;FG;BGm<text>ESC[0m
+    """Pryzm - Base object to handle adding color
+    Uses a dictionary of codes to dynamically add functions named as the key, and inserting
+    an ascii code which is the value.  For example, "red": 31 would result in a
+    function named 'red()', which takes any number of text entries and wraps with
+    with an ascii escape color seqence 31 to provide color.
     """
-    _text_attributes = text_attributes
+    _text_attributes = text_attribute
     def __init__(self, *text, echo=False):
-        self.text = " ".join(text) 
+        """Creates the base object to generate functions.
+        *text        any number of text fields.  They will be wrapped end to end, not around each token
+        echo         If this is true, a generated function will act like python's print.
+                     Otherwise, you need to call print() yourself, useful when composing multiple color
+
+        Returns: a function which when passed text returns ascii encoded text.
+                 Optionally, it will also print if echo is set to true
+        """
+        self.text = " ".join(text)
         self.features = []
         self.ASC = u"\u001b["
         self.CLR = u"\u001b[0m"
@@ -35,13 +45,12 @@ class Pryzm(object):
             if text:
                 self.text = text
                 saved_return = self.show()
-                if self.echo: print(self.show())
-                self.reset()
                 if self.echo:
-                    return saved_return
-                else:
-                    return
-            else:
+                    print(self.show())
+
+                self.reset()
+                return saved_return
+            else:                          # If no text, return self so we can chain on '.'
                 return self
 
         fn.__name__ = feature
