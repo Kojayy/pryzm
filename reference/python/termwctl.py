@@ -163,34 +163,34 @@ if __name__ == "__main__":
     clear()
     home()
     txt = "Hello World"
-    print off(txt)
-    print bold(txt)
-    print dim(txt)
-    print underscore(txt)
-    print blink(txt)
-    print reverse(txt)
-    print hide(txt)
+    print(off(txt))
+    print(bold(txt))
+    print(dim(txt))
+    print(underscore(txt))
+    print(blink(txt))
+    print(reverse(txt))
+    print(hide(txt))
 
 
-    print black(onWhite(txt))
-    print red(onCyan(txt))
-    print green(onMagenta(txt))
-    print yellow(onBlue(txt))
-    print blue(onYellow(txt))
-    print magenta(onGreen(txt))
-    print cyan(onRed(txt))
-    print white(onBlack(txt))
+    print(black(onWhite(txt)))
+    print(red(onCyan(txt)))
+    print(green(onMagenta(txt)))
+    print(yellow(onBlue(txt)))
+    print(blue(onYellow(txt)))
+    print(magenta(onGreen(txt)))
+    print(cyan(onRed(txt)))
+    print(white(onBlack(txt)))
     home()
     move(10, 10)
-    print 'A'
+    print('A')
     move(5,5)
-    print 'B'
+    print('B')
     for pos in range(20):
         moveTo(pos, pos)
-        print 'Y'
+        print('Y')
 
     moveTo(20,20)
-    print getSize()
+    print(getSize())
     moveTo(12, 0)
     for pos in range(5):
         move(pos,pos)

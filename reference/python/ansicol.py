@@ -22,7 +22,7 @@ class Ansi(object):
 # Test Cases
 
 def setup_module(module):
-    print module 
+    print(module) 
     module.ansi = Ansi()
 
 def test_is_foreground():
