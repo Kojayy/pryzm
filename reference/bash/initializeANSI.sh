@@ -23,9 +23,12 @@ reset="${esc}[0m"
 initializeANSI
 
 function info {
-  echo ${yellowf}${1}${reset}
+  echo -ne ${yellowf}${1}${reset}
+  echo
 }
 
-echo ${yellowf}Hello World${reset}
+echo -ne ${yellowf}Hello World${reset}
+echo
 
 info "This is an info message"
+echo
