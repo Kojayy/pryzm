@@ -1,11 +1,6 @@
 #!/usr/local/bin/bash
 
 echo $(/usr/local/bin/bash --version)
-# 2000 to 3000
-#for i in {2000..3000};
-#do
-#  echo -e "${i}: \u${i}"
-#done
 
 for i in {200..300};
 do
