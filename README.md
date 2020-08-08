@@ -16,11 +16,11 @@ print(red('Red Text') + " " + red_on_blue("followed by blue text"))  # prints re
 ```
 
 
-### Create standalone functions to print directly
+### Create standalone functions to print directly by setting `echo=True` in constructor
 ```python
 import pryzm as pz
 red = pz.Pryzm(echo=True).red
-red_on_blue = pz.Pryzm().red().BLUE
+red_on_blue = pz.Pryzm(echo=True).red().BLUE
 
 red("This is red text")                               # These two functions now print directly
 red_on_blue("This is red text with blue background")
