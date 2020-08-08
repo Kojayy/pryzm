@@ -1,6 +1,7 @@
 import os
 import sys
-sys.path.append(os.path.normpath(os.path.join(os.path.dirname(__file__), "../")))
+absp = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+sys.path.insert(0, absp)
 
 import pryzm
 
