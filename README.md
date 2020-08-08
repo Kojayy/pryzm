@@ -12,7 +12,7 @@ red = pz.Pryzm().red                  # create a function for a color
 red_on_blue = pz.Pryzm().red().BLUE   # lower case is text, CAPS is background.
                                       # NB: that to chain you need the () to capture the 'self' return
 
-print(red('Red Text') + " " + blue("followed by blue text"))  # prints red and blue text 
+print(red('Red Text') + " " + red_on_blue("followed by blue text"))  # prints red and blue text 
 ```
 
 
