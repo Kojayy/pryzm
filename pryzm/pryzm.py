@@ -1,5 +1,5 @@
 
-from pryzm import text_attribute
+from pryzm import text_attributes
 
 class Pryzm(object):
     """Pryzm - Base object to handle adding color
@@ -8,7 +8,7 @@ class Pryzm(object):
     function named 'red()', which takes any number of text entries and wraps with
     with an ascii escape color seqence 31 to provide color.
     """
-    _text_attributes = text_attribute
+    _text_attributes = text_attributes
     def __init__(self, *text, echo=False):
         """Creates the base object to generate functions.
         *text        any number of text fields.  They will be wrapped end to end, not around each token
