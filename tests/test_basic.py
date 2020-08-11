@@ -45,3 +45,10 @@ def test_composable_if_not_printing():
     red = pz.red
 
     assert blue("BLUE")+" "+red("DEMON") == '\x1b[34mBLUE\x1b[0m \x1b[31mDEMON\x1b[0m'
+
+def test_convert_to_string():
+    pz = pryzm.Pryzm(echo=True)
+    blue = pz.blue
+
+    assert pz.blue("This is", 1, "also blue") == '\x1b[34mThis is 1 also blue\x1b[0m'
+    assert pz.blue("This is", {'key': 'val'}, "also blue") == '\x1b[34mThis is {\'key\': \'val\'} also blue\x1b[0m'

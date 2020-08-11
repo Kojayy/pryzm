@@ -39,7 +39,7 @@ class Pryzm(object):
             return: function, adds a function named 'color' wrapping test with ascii code.
         """
         def fn(self, *text):
-            text = " ".join(text)
+            text = " ".join([str(word) for word in text])
             self.features.append(str(ansi_code))
 
             if text:
