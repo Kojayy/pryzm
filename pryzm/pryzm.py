@@ -9,7 +9,7 @@ class Pryzm(object):
     with an ascii escape color seqence 31 to provide color.
     """
     _text_attributes = text_attributes
-    def __init__(self, *text, echo=False):
+    def __init__(self, *text, echo=False, fixed=False):
         """Creates the base object to generate functions.
         *text        any number of text fields.  They will be wrapped end to end, not around each token
         echo         If this is true, a generated function will act like python's print.
@@ -23,6 +23,7 @@ class Pryzm(object):
         self.ASC = u"\u001b["
         self.CLR = u"\u001b[0m"
         self.echo = echo
+        self.fixed = fixed 
 
         for feature, ansi_code in self._text_attributes.items():
             self._add_color(feature, ansi_code)
@@ -40,15 +41,17 @@ class Pryzm(object):
         """
         def fn(self, *text):
             text = " ".join([str(word) for word in text])
-            self.features.append(str(ansi_code))
+            if str(ansi_code) not in self.features:
+                self.features.append(str(ansi_code))
 
             if text:
                 self.text = text
-                saved_return = self.show()
+                saved_return = u"{}{}m{}{}".format(self.ASC, ";".join(self.features), self.text, self.CLR)
                 if self.echo:
-                    print(self.show())
+                    print(saved_return)
 
-                self.reset()
+                if not self.fixed:
+                    self.reset()
                 return saved_return
             else:                          # If no text, return self so we can chain on '.'
                 return self
