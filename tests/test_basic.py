@@ -10,6 +10,7 @@ def test_basic_foreground():
 
     assert pz.red("test")    == '\x1b[31mtest\x1b[0m'
     assert pz.cyan("test")   == '\x1b[36mtest\x1b[0m'
+    assert pz.blue("test")   == '\x1b[34mtest\x1b[0m'
 
 def test_basic_background():
     pz = pryzm.Pryzm()
@@ -52,3 +53,15 @@ def test_convert_to_string():
 
     assert pz.blue("This is", 1, "also blue") == '\x1b[34mThis is 1 also blue\x1b[0m'
     assert pz.blue("This is", {'key': 'val'}, "also blue") == '\x1b[34mThis is {\'key\': \'val\'} also blue\x1b[0m'
+
+def test_second_use():
+    pz = pryzm.Pryzm(echo=False, fixed=True)
+    blue_bold = pz.blue()._bold
+
+    assert blue_bold("Hello1") == '\x1b[34;1mHello1\x1b[0m'
+    blue_bold("whatevs")
+    blue_bold("this")
+    blue_bold("that")
+    blue_bold("and the other")
+
+    assert blue_bold("Hello2") == '\x1b[34;1mHello2\x1b[0m'
